@@ -28,7 +28,7 @@ Here are the basic steps I followed to get this up setup running.
       + Change the `dist` folder destination in your `Gruntfile.js` to `../public`. This is where your compiled app assets will be deposited when you `grunt build`
 6. Start writing awesome apps.
 
-Yeoman gives you a ton of stuff for free - for instance, you're testing environment will already be configured. The setup I described above, especially when combined with a great frontend framework like Foundation or Bootstrap, has been really productive and fun for me. Hope it helps you!
+Yeoman gives you a ton of stuff for free - for instance, your testing environment will already be configured. The setup I described above, especially when combined with a great frontend framework like Foundation or Bootstrap, has been really productive and fun for me. Hope it helps you!
 
 [yeoman]: http://yeoman.io
 [prox]: https://github.com/drewzboto/grunt-connect-proxy
