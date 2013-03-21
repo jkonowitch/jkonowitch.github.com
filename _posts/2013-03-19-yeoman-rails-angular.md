@@ -24,7 +24,7 @@ Here are the basic steps I followed to get this up setup running.
 4. Neat generators for Angular: `npm install generator-angular generator-testacular`
 5. Install all the Yeoman stuff: `npm install && bower install`
     + A couple of caveats for Yeoman:
-      + You'll want to install [Grunt-Connect-Proxy][prox] for development. This allows you to proxy HTTP requests to your API to your rails server as you'll be running your app using `grunt server`, part of Yeoman's workflow. You'll probably want to namespace your Rails API behind a `/api` path so that you're not adding each new controller to the proxy whitelist.
+      + You'll want to install [Grunt-Connect-Proxy][prox] for development. This allows you to proxy HTTP requests from your app to your Rails API as you'll be running your angular app using Yeoman's development server (`grunt server` to start it up). Of course, you will also have your rails development server going to serve as the API backend. You'll probably want to namespace your Rails API behind a `/api` path so that you're not adding each new controller to the proxy whitelist.
       + Change the `dist` folder destination in your `Gruntfile.js` to `../public`. This is where your compiled app assets will be deposited when you `grunt build`
 6. Start writing awesome apps.
 
