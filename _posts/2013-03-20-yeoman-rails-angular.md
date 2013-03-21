@@ -21,14 +21,14 @@ Here are the basic steps I followed to get this up setup running.
 1. `rails new myapp && cd myapp`
 2. Create a folder where your client-side app will go: `mkdir angular && cd angular`
 3. Install Yeoman: `npm install -g yo grunt-cli bower `
-4. Neat generators for Angular: `npm install generator-angular generator-testacular`
+4. Neat generators for Angular: `npm install generator-angular generator-karma`
 5. Install all the Yeoman stuff: `npm install && bower install`
     + A couple of caveats for Yeoman:
       + You'll want to install [Grunt-Connect-Proxy][prox] for development. This allows you to proxy HTTP requests from your app to your Rails API as you'll be running your angular app using Yeoman's development server (`grunt server` to start it up). Of course, you will also have your rails development server going to serve as the API backend. You'll probably want to namespace your Rails API behind a `/api` path so that you're not adding each new controller to the proxy whitelist.
       + Change the `dist` folder destination in your `Gruntfile.js` to `../public`. This is where your compiled app assets will be deposited when you `grunt build`
 6. Start writing awesome apps.
 
-Yeoman gives you a ton of stuff for free - for instance, your testing environment will already be configured. The setup I described above, especially when combined with a great frontend framework like Foundation or Bootstrap, has been really productive and fun for me. Hope it helps you!
+As I mentioned above, using Yeoman as opposed to sticking all of your files into your Rails application, has a lot of added benefits: it configures your test environment (Karma), it generates an intuitive, organized folder structure (made all the more powerful by the `generator-angular` plugin I mentioned above), and goodies like LiveReload right out of the box. The setup I described above, especially when combined with a great frontend framework like Foundation or Bootstrap, has been really productive and fun for me. Hope it helps you!
 
 [yeoman]: http://yeoman.io
 [prox]: https://github.com/drewzboto/grunt-connect-proxy
