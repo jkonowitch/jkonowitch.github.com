@@ -38,6 +38,10 @@ a {
   .sidebar .meta a {
     margin-left: 0px;
     color: black; }
+    img.linked {
+      width: 17px;
+      height: 16px;
+    }
     .sidebar .meta a:hover {
       color: #227ce8; }
   .sidebar .sections {
