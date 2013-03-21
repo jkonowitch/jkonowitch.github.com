@@ -28,7 +28,7 @@ Here are the basic steps I followed to get this up setup running.
       + Change the `dist` folder destination in your `Gruntfile.js` to `../public`. This is where your compiled app assets will be deposited when you `grunt build`
 6. Start writing awesome apps.
 
-As I mentioned above, using Yeoman as opposed to sticking all of your files into your Rails application, has a lot of added benefits: it configures your test environment (Karma), it generates an intuitive, organized folder structure (made all the more powerful by the `generator-angular` plugin I mentioned above), and goodies like LiveReload right out of the box. The setup I described above, especially when combined with a great frontend framework like Foundation or Bootstrap, has been really productive and fun for me. Hope it helps you!
+As I mentioned above, using Yeoman - as opposed to sticking all of your Angular files into your Rails application structure - has a lot of added benefits: it configures your test environment (Karma), it generates an intuitive, organized folder structure (made all the more powerful by the `generator-angular` plugin I mentioned above), and goodies like LiveReload right out of the box. The setup I described above, especially when combined with a great frontend framework like Foundation or Bootstrap, has been really productive and fun for me. Hope it helps you!
 
 [yeoman]: http://yeoman.io
 [prox]: https://github.com/drewzboto/grunt-connect-proxy
