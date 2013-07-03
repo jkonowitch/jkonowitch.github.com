@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Angular + Rails + Yeoman = Angrailman?</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="/css/c318.main.css">
+    <script src="/_bower_components/foundation/js/vendor/custom.modernizr.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Navigation -->
+
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <a href="/">
+            <figure></figure>
+            <h1>
+                Jeff Konowitch
+            </h1>
+          </a>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li>
+            <script>
+document.write("<n uers='znvygb:wxbabjvgpu@tznvy.pbz' gnetrg='_oynax'>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<='Z'?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+</script>
+
+Contact</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="/blog/">Blog</a>
+          </li>
+          <li class="divider"></li>
+        </ul>
+      </section>
+    </nav>
+
+    <div class="main">
+      <article class="post">
+  <section class="title">
+    <h1>
+      <a href="/posts/yeoman-rails-angular/">Angular + Rails + Yeoman = Angrailman?</a>
+    </h1>
+    <span>
+      March 20, 2013
+    </span>
+  </section>
+  <section class="content">
+    <p>Lots o&#8217; fun new tools running around the JavaScript ecosystem right now (Angular, Ember, Backbone, etc&#8230;) Only trouble is that the relative immaturity of this space means high costs for new developers trying to navigate the thicket of options for testing, build, workflow, and other development <em>things</em>.</p>
+
+<p>I&#8217;m not going to wade into the debate around which client side JS framework is the &#8220;best&#8221;. However, for those of you who like AngularJS on the frontend and Rails on the backend, this post is for you. The basic idea is of course to use Rails as the API backend for persistence, session, etc., Under this scenario, it will also serve up the application code as a static asset from the <code>/public</code> directory rather than having your frontend code served from a Rails controller or have your assets compiled using the asset pipeline. The reason for this is that I use <a href='http://yeoman.io'>Yeoman</a> for client side dependency management, building, testing, and workflow management. I&#8217;ve found the code/review iteration speed is insanely fast with Yeoman&#8217;s highly polished workflow - add dependencies and make changes while LiveReload pushes all of your changes to the browser in real-time, allowing you to dial in and create some serious focus.</p>
+
+<p>The other thing I like about Yeoman is that is has a large and growing ecosystem of plugins and generators (I use some below), taking the pain out of repetitive tasks and allowing you to focus on building a great user experience.</p>
+
+<p>Here are the basic steps I followed to get this up setup running.</p>
+
+<h3 id='prerequisites'>Prerequisites</h3>
+
+<ul>
+<li>A computer</li>
+
+<li>Rails</li>
+
+<li>Node.js</li>
+</ul>
+
+<h3 id='the_setup'>The Setup</h3>
+
+<ol>
+<li><code>rails new myapp &amp;&amp; cd myapp</code></li>
+
+<li>Create a folder where your client-side app will go: <code>mkdir angular &amp;&amp; cd angular</code></li>
+
+<li>Install Yeoman: <code>npm install -g yo grunt-cli bower </code></li>
+
+<li>Neat generators for Angular: <code>npm install generator-angular generator-karma</code></li>
+
+<li>Install all the Yeoman stuff: <code>yo angular</code> (angular app scaffold) and <code>npm install &amp;&amp; bower install</code> + A couple of caveats for Yeoman: + You&#8217;ll want to install <a href='https://github.com/drewzboto/grunt-connect-proxy'>Grunt-Connect-Proxy</a> for development. This allows you to proxy HTTP requests from your app to your Rails API as you&#8217;ll be running your angular app using Yeoman&#8217;s development server (<code>grunt server</code> to start it up). Of course, you will also have your rails development server going to serve API requests. You&#8217;ll probably want to namespace your Rails API behind an <code>/api</code> path so that you&#8217;re not adding each new controller to the proxy whitelist. + Change the <code>dist</code> folder destination in your <code>Gruntfile.js</code> to <code>../public</code>. This is where your compiled app assets will be deposited when you <code>grunt build</code></li>
+
+<li>Start writing awesome apps.</li>
+</ol>
+
+<p>As I mentioned above, using Yeoman - as opposed to sticking all of your Angular files into your Rails application structure - has a lot of added benefits: it configures your test environment (Karma), it generates an intuitive, organized folder structure (made all the more powerful by the <code>generator-angular</code> plugin I mentioned above), and goodies like LiveReload right out of the box. The setup I described above, especially when combined with a great frontend framework like Foundation or Bootstrap, has been really productive and fun for me. Hope it helps you!</p>
+    <div class="panel">
+  <h4 class="subheader">Looking to build a custom web application?</h4>
+  <script>
+document.write("<n uers='znvygb:wxbabjvgpu@tznvy.pbz' gnetrg='_oynax'>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<='Z'?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+</script>
+
+Contact me</a> to start the conversation!
+</div>
+  </section>
+</article>
+
+      <!-- Footer -->
+    </div>
+
+    <footer class="row">
+      <div class="large-12 columns"><hr>
+          <div class="row">
+            <div class="large-6 columns">
+              <p>&copy; Jeffrey Konowitch, 2012 - 2013</p>
+            </div>
+          </div>
+      </div>
+    </footer>
+
+    <script src="/js/27e4.script.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src='//www.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+  </body>
+</html>
