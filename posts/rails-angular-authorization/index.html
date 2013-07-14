@@ -91,7 +91,7 @@ def set_csrf_cookie_for_angular
   cookies[&#39;XSRF-TOKEN&#39;] = form_authenticity_token if protect_against_forgery?
 end</code></pre>
 
-<p>Basically, what&#8217;s happening here is that if you&#8217;ve signed in through the Rails authentication layer then you get forwarded on to the Angular application. Otherwise, it&#8217;s on to the sign in page for you. The <code>cookies[&#39;XSRF-TOKEN]</code> tells Angular how to issue properly signed AJAX requests that will pass Rails&#8217; cross-site forgery inspection. For more on how Angular handles this automatically check out <a href='http://docs.angularjs.org/api/ng.$http#crosssiterequestforgeryxsrfprotection'>this part</a> of the documentation.</p>
+<p>Basically, what&#8217;s happening here is that if you&#8217;ve signed in through the Rails authentication layer then the controller just reads and responds with the <code>angular_app.html</code> file. Otherwise, it&#8217;s on to the sign in page for you. The <code>cookies[&#39;XSRF-TOKEN]</code> tells Angular how to issue properly signed AJAX requests that will pass Rails&#8217; cross-site forgery inspection. For more on how Angular handles this automatically check out <a href='http://docs.angularjs.org/api/ng.$http#crosssiterequestforgeryxsrfprotection'>this part</a> of the documentation.</p>
 
 <p>Well, that&#8217;s all. Was this helpful for you? Do you use a different methodology? Drop me a line and let me know!</p>
     <div class="panel">
