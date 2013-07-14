@@ -68,7 +68,7 @@ Contact</a>
     </span>
   </section>
   <section class="content">
-    <p>I&#8217;ve seen a few strategies to handle user authorization for AngularJS apps using Rails as a backend. Basically, these break down into either letting Rails or Angular manage the authorization flow. All of your Rails controllers should implement checks for authorization before exposing resources to API consumers, that&#8217;s not what I&#8217;m talking about. Rather, as a user if I try to visit <code>/users/1</code>, but I&#8217;m not signed in then who is responsible for redirecting me to the right place and rendering the correct UI?</p>
+    <p>I&#8217;ve seen a few strategies to handle user authorization for AngularJS apps using Rails as a backend. Basically, these break down into either letting Rails or Angular manage the authorization flow. To be clear, I&#8217;m talking about user interface feedback; you should <em>definitely</em> implement authorization checks (probably as a <code>before_filter</code>) in all of your Rails controllers before exposing resources to API consumers. Rather, as a user if I try to visit <code>/users/1</code>, but I&#8217;m not signed in then who is responsible for redirecting me to the right place and rendering the correct UI?</p>
 
 <p>You could place this logic into AngularJS <a href='http://docs.angularjs.org/api/ng.$route#$routeChangeStart'><code>$routeChangeStart</code></a> callbacks. However, I&#8217;ve found that this starts to get really complicated as it forces you to inject all sorts of session concerns into your client app.</p>
 
@@ -91,7 +91,7 @@ def set_csrf_cookie_for_angular
   cookies[&#39;XSRF-TOKEN&#39;] = form_authenticity_token if protect_against_forgery?
 end</code></pre>
 
-<p>Basically, what&#8217;s happening here is that if you&#8217;ve signed in through the Rails authentication layer then you get forwarded on to the Angular application. Otherwise, it&#8217;s on to the sign in page for you. The <code>cookies[&#39;XSRF-TOKEN]</code> tells Angular how to issue properly authorized AJAX requests. For more on how Angular handles this automatically check out <a href='http://docs.angularjs.org/api/ng.$http#crosssiterequestforgeryxsrfprotection'>this part</a> of the documentation.</p>
+<p>Basically, what&#8217;s happening here is that if you&#8217;ve signed in through the Rails authentication layer then you get forwarded on to the Angular application. Otherwise, it&#8217;s on to the sign in page for you. The <code>cookies[&#39;XSRF-TOKEN]</code> tells Angular how to issue properly signed AJAX requests that will pass Rails&#8217; cross-site forgery inspection. For more on how Angular handles this automatically check out <a href='http://docs.angularjs.org/api/ng.$http#crosssiterequestforgeryxsrfprotection'>this part</a> of the documentation.</p>
 
 <p>Well, that&#8217;s all. Was this helpful for you? Do you use a different methodology? Drop me a line and let me know!</p>
     <div class="panel">
